@@ -53,7 +53,7 @@ const EmployeeController = {
     })
   },
   employeeCount: (req, res) => {
-    const sql = "SELECT COUNT(employee_id) FROM employee_management.employee"
+    const sql = "SELECT COUNT(employee_id) AS employee FROM employee_management.employee"
     conn.query(sql, (err, results) => {
         if(err) return res.json({error: "Get COUNT of employee error in sql."})
         return res.json({status: "Success", result: results})
@@ -61,7 +61,7 @@ const EmployeeController = {
     )
   },
   sumOfSalary: (req, res) => {
-    const sql = "SELECT SUM(salary) FROM employee_management.employee"
+    const sql = "SELECT SUM(salary) AS salary FROM employee_management.employee"
     conn.query(sql, (err, results) => {
         if(err) return res.json({error: "Get SUM of salaries error in sql."})
         return res.json({status: "Success", result: results})

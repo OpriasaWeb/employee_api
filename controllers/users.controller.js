@@ -45,6 +45,14 @@ const UsersController = {
         return res.json({status: "Error", error: "Wrong email or password. Please try again."})
       }
     })
+  },
+  userCount: (req, res) => {
+    const sql = "SELECT COUNT(users_id) AS admin FROM employee_management.users"
+    conn.query(sql, (err, results) => {
+        if(err) return res.json({error: "Get COUNT of employee error in sql."})
+        return res.json({status: "Success", result: results})
+      }
+    )
   }
 }
 
