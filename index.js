@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended:false }))
 app.use("/users", UsersRouter)
 app.use("/employee", EmployeeRouter)
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 
 app.listen(PORT, () => {
   console.log(`Server up and running on port ${PORT}`)
